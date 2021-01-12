@@ -1,10 +1,10 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
-import { jsx } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 
 function Header() {
-  return <div>Participants</div>;
+  return <h1>Participants</h1>;
 }
 
 export default Header;
