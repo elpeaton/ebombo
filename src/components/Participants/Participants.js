@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 
+import moment from "moment";
+
 import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 
@@ -23,7 +25,9 @@ function Participants({ participants }) {
         <Participant>
           <ParticipantName>{participant.name}</ParticipantName>
           <Icon src={birthdateIcon} alt="Birthdate" />
-          <ParticipantBirthdate>{participant.birthdate}</ParticipantBirthdate>
+          <ParticipantBirthdate>
+            {moment(participant.birthdate).format("Do MMM YYYY")}
+          </ParticipantBirthdate>
           <Icon src={phoneIcon} alt="Phone" />
           <ParticipantPhone>{participant.phone}</ParticipantPhone>
         </Participant>
