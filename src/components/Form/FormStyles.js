@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Modal = styled.div`
-  width: 375px;
+  width: 100%;
   position: absolute;
   top: 0;
   background: rgba(240, 209, 183, 0.69);
@@ -9,6 +9,9 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (min-width: 769px) {
+    width: 375px;
+  }
 `;
 
 export const ModalForm = styled.form`
