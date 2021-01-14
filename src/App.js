@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
+import { Container } from "./components/Styles";
 import Header from "./components/Header/Header";
 import Participants from "./components/Participants/Participants";
 import Form from "./components/Form/Form";
@@ -26,13 +27,24 @@ function App() {
     }
   }, [participants]);
 
+  // Close modal with escape key
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setShowAddForm(false);
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   //Function take current participants and add a new one
   const createParticipant = (participant) => {
     setParticipants([...participants, participant]);
   };
 
   return (
-    <div>
+    <Container>
       <Header setShowAddForm={setShowAddForm} />
       <Participants participants={participants} />
       {showAddForm && (
@@ -41,7 +53,7 @@ function App() {
           createParticipant={createParticipant}
         />
       )}
-    </div>
+    </Container>
   );
 }
 

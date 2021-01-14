@@ -21,7 +21,7 @@ function Participants({ participants }) {
     <Wrapper>
       {_.sortBy(participants, "name").map((participant) => (
         <Participant>
-          <ParticipantName>{participant.name}</ParticipantName>
+          <ParticipantName key={Date.now()}>{participant.name}</ParticipantName>
           <Icon src={birthdateIcon} alt="Birthdate" />
           <ParticipantBirthdate>
             {moment(participant.birthdate).format("Do MMM YYYY")}

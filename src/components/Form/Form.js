@@ -9,9 +9,11 @@ import {
   Label,
   Input,
   AddButton,
-  CloseButton,
   ErrorMessage,
+  HeaderForm,
+  CloseIcon,
 } from "./FormStyles";
+import closeIcon from "../../assets/icons/close.svg";
 
 function Form({ setShowAddForm, createParticipant }) {
   // To close modal
@@ -64,10 +66,10 @@ function Form({ setShowAddForm, createParticipant }) {
   return (
     <Modal>
       <ModalForm onSubmit={submitParticipant}>
-        <div>
+        <HeaderForm>
           <Title>New Participant</Title>
-          <CloseButton onClick={handleCloseAddForm}>x</CloseButton>
-        </div>
+          <CloseIcon src={closeIcon} alt="Close" onClick={handleCloseAddForm} />
+        </HeaderForm>
         <Label>Name:</Label>
         <Input type="text" name="name" onChange={handleChange} value={name} />
         <Label>Birth date:</Label>
