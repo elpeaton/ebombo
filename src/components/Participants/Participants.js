@@ -16,19 +16,7 @@ import {
   Participant,
 } from "./ParticipantsStyles";
 
-function Participants() {
-  const [participants, setParticipants] = useState([
-    {
-      name: "Herbert Miguel Mulanovich Aljovin",
-      birthdate: "19/1/1979",
-      phone: "999 234 434",
-    },
-    {
-      name: "Mónica Vargas Pineda",
-      birthdate: "7/7/1998",
-      phone: "999 234 434",
-    },
-  ]);
+function Participants({ participants }) {
   return (
     <Wrapper>
       {participants.map((participant) => (

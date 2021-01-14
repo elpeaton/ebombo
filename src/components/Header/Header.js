@@ -5,11 +5,15 @@ import styled from "@emotion/styled";
 
 import { Title, HeaderContainer, AddButton } from "./HeaderStyles";
 
-function Header() {
+function Header({ setShowAddForm }) {
+  function handleCloseAddForm(event) {
+    event.preventDefault();
+    setShowAddForm(true);
+  }
   return (
     <HeaderContainer>
       <Title>Participants</Title>
-      <AddButton>+</AddButton>
+      <AddButton onClick={handleCloseAddForm}>+</AddButton>
     </HeaderContainer>
   );
 }
