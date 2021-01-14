@@ -80,7 +80,12 @@ function Form({ setShowAddForm, createParticipant }) {
           value={birthdate}
         />
         <Label>Phone:</Label>
-        <Input type="text" name="phone" onChange={handleChange} value={phone} />
+        <Input
+          type="number"
+          name="phone"
+          onChange={handleChange}
+          value={phone}
+        />
         <AddButton type="submit">ADD</AddButton>
         {error && <ErrorMessage>Please complete all the fields</ErrorMessage>}
       </ModalForm>
