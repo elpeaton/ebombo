@@ -59,4 +59,5 @@ export const AddButton = styled.button`
 
 export const ErrorMessage = styled.p`
   color: #fd5e4c;
+  font-size: 1.3rem;
 `;

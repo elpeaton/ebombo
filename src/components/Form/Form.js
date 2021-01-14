@@ -79,9 +79,8 @@ function Form({ setShowAddForm, createParticipant }) {
         />
         <Label>Phone:</Label>
         <Input type="text" name="phone" onChange={handleChange} value={phone} />
-
         <AddButton type="submit">ADD</AddButton>
-        {error && <ErrorMessage>Please complete the info</ErrorMessage>}
+        {error && <ErrorMessage>Please complete all the fields</ErrorMessage>}
       </ModalForm>
     </Modal>
   );
