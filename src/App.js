@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import Header from "./components/Header/Header";
@@ -6,19 +6,26 @@ import Participants from "./components/Participants/Participants";
 import Form from "./components/Form/Form";
 
 function App() {
+  // State to open or close the form
   const [showAddForm, setShowAddForm] = useState(false);
-  const [participants, setParticipants] = useState([
-    {
-      name: "Herbert Miguel Mulanovich Aljovin",
-      birthdate: "19/1/1979",
-      phone: "999 234 434",
-    },
-    {
-      name: "Mónica Vargas Pineda",
-      birthdate: "7/7/1998",
-      phone: "999 234 434",
-    },
-  ]);
+
+  // Participants on localStorage
+  let participantsStarted = JSON.parse(localStorage.getItem("participants"));
+  if (!participantsStarted) {
+    participantsStarted = [];
+  }
+  // State for participants array
+  const [participants, setParticipants] = useState(participantsStarted);
+
+  useEffect(() => {
+    let participantsStarted = JSON.parse(localStorage.getItem("participants"));
+    if (participantsStarted) {
+      localStorage.setItem("participants", JSON.stringify(participants));
+    } else {
+      localStorage.setItem("participants", JSON.stringify([]));
+    }
+  }, [participants]);
+
   //Function take current participants and add a new one
   const createParticipant = (participant) => {
     setParticipants([...participants, participant]);
