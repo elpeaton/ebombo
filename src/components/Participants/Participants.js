@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useState } from "react";
+import React from "react";
 
-import { css, jsx } from "@emotion/react";
-import styled from "@emotion/styled";
+import moment from "moment";
+import _ from "lodash";
 
 import birthdateIcon from "../../assets/icons/birth_baby.svg";
 import phoneIcon from "../../assets/icons/cellphone.svg";
@@ -19,11 +19,13 @@ import {
 function Participants({ participants }) {
   return (
     <Wrapper>
-      {participants.map((participant) => (
+      {_.sortBy(participants, "name").map((participant) => (
         <Participant>
-          <ParticipantName>{participant.name}</ParticipantName>
+          <ParticipantName key={Date.now()}>{participant.name}</ParticipantName>
           <Icon src={birthdateIcon} alt="Birthdate" />
-          <ParticipantBirthdate>{participant.birthdate}</ParticipantBirthdate>
+          <ParticipantBirthdate>
+            {moment(participant.birthdate).format("Do MMM YYYY")}
+          </ParticipantBirthdate>
           <Icon src={phoneIcon} alt="Phone" />
           <ParticipantPhone>{participant.phone}</ParticipantPhone>
         </Participant>

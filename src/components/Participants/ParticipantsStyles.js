@@ -4,11 +4,14 @@ export const Wrapper = styled.div``;
 
 export const Participant = styled.div`
   display: grid;
-  grid-template-columns: 6% auto 6% 30%;
+  grid-template-columns: 25px auto 25px 30%;
   grid-template-rows: 2;
   grid-gap: 5px;
   border-bottom: 1px solid #5b6678;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
+  &:hover {
+    background-color: #feada4;
+  }
 `;
 
 export const ParticipantName = styled.p`

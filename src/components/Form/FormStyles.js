@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 
 export const Modal = styled.div`
-  width: 100vw;
+  width: 375px;
   position: absolute;
   top: 0;
   background: rgba(240, 209, 183, 0.69);
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,15 +22,19 @@ export const ModalForm = styled.form`
   grid-gap: 12px;
 `;
 
+export const HeaderForm = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Title = styled.p`
   font-size: 2.2rem;
   font-weight: 700;
 `;
 
-export const CloseButton = styled.div`
-  color: #fd5e4c;
-  font-weight: 700;
-  font-size: 2rem;
+export const CloseIcon = styled.img`
+  width: 30px;
+  height: 30px;
 `;
 
 export const Label = styled.label`
@@ -59,4 +63,5 @@ export const AddButton = styled.button`
 
 export const ErrorMessage = styled.p`
   color: #fd5e4c;
+  font-size: 1.3rem;
 `;
