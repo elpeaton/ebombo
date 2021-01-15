@@ -21,7 +21,7 @@ export const ModalForm = styled.form`
   padding: 3rem;
   border-radius: 5px;
   display: grid;
-  grid-template-rows: 4rem repeat(6, 2.2rem);
+  grid-template-rows: 3rem repeat(6, 2.2rem);
   grid-gap: 12px;
 `;
 
@@ -43,6 +43,7 @@ export const CloseIcon = styled.img`
 export const Label = styled.label`
   font-size: 1.6rem;
   font-weight: 400;
+  margin-top: 5px;
 `;
 
 export const Input = styled.input`
@@ -50,6 +51,7 @@ export const Input = styled.input`
   border-bottom: 1px solid #5e697b;
   font-size: 1.6rem;
   font-weight: 400;
+  min-height: 30px;
 `;
 
 export const AddButton = styled.button`
@@ -62,6 +64,7 @@ export const AddButton = styled.button`
   font-weight: 700;
   letter-spacing: 0.1rem;
   height: 3.5rem;
+  margin-top: 10px;
 `;
 
 export const ErrorMessage = styled.p`
